@@ -1,0 +1,1 @@
+/home/team5/public_html/index.php

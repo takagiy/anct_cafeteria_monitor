@@ -2,9 +2,9 @@
 
 use App\Controllers\DailyController;
 
-$app->get('/', DailyController::class . ':index');
-$app->get('/weekly', WeeklyController::class . ':index');
+$app->get('/team5/index.php', DailyController::class . ':index');
+$app->get('/team5/weekly.php', WeeklyController::class . ':index');
 
-$app->get('/api/daily/get-menus', DailyController::class . ':get_menus');
-$app->post('/api/daily/set-stock', DailyController::class . ':set_stock');
-$app->get('/api/weekly/get-menus', WeeklyController::class . ':get_menus');
+$app->get('/team5/api/daily/get-menus.php', DailyController::class . ':get_menus');
+$app->post('/team5/api/daily/set-stock.php', DailyController::class . ':set_stock');
+$app->get('/team5/api/weekly/get-menus.php', WeeklyController::class . ':get_menus');
