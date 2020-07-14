@@ -20,9 +20,10 @@ class DailyController extends Controller
      */
     public function index(Request $request, Response $response, $args)
     {
-        return $this->c->get('view')->render($response, 'daily/index.twig', [
-            'appName' => $this->c->get('settings')['app']['name'],
-        ]);
+	$params = $request->getQueryParams();
+	return $this->c->get('view')->render($response, 'daily/index.twig', [
+		'name' => $params['name'] ?? 'World',
+	]);
     }
 
     public function get_menus(Request $request, Response $response, $args)
