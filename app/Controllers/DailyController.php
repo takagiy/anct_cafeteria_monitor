@@ -16,7 +16,11 @@ class DailyController extends Controller
     public function index(Request $request, Response $response, $args)
     {
         $params = $request->getQueryParams();
-        $menus = Menu::all();
+        //$menus = Menu::all();
+        $menus = $this->load_menus();
+        echo '<!--';
+        var_dump($menus);
+        echo '-->';
 
         return $this->c->get('view')->render($response, 'daily/index.twig', [
             'menus' => $menus,
@@ -41,15 +45,15 @@ class DailyController extends Controller
      */
     private function load_menus(): array
     {
-        // $today = <TODAY...>;
-        // $today_menus = Menu::where(<QUERY...>);
-        // $permanent_menus = $today_menus->where(<QUERY...>)->all();
-        // $a_set = $today_menus->where(<QUERY...>)->all();
-        // $b_set = $today_menus->where(<QUERY...>)->all();
-        // return [
-        //   'a_set' => $a_set,
-        //   'b_set' => $b_set,
-        //   'permanent' => $parmanent,
-        // ];
+        $today = '2020-07-07'; //date('Y-m-d');
+        $permanent_menus = Menu::where('type', '=', 'PERMANENT_MENU')->get()->toArray();
+        $a_set = Menu::where('date', '=', $today)->where('type', '=', 'A_SET')->first();
+        $b_set = Menu::where('date', '=', $today)->where('type', '=', 'B_SET')->first();
+
+        return [
+            'a_set' => $a_set,
+            'b_set' => $b_set,
+            'permanent' => $permanent_menus,
+        ];
     }
 }
