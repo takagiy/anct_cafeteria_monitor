@@ -1,0 +1,51 @@
+.header{
+  width:auto;
+  height:100px;
+  display:flex;
+  justify-content:center;
+}
+.center-label{
+  width:auto;
+  height:50px;
+  display:flex;
+  justify-content:center;
+}
+.label-and-switch{
+  width:auto;
+  height:40px;
+  display:flex;
+}
+.label{
+  width:30%;
+  height:30px;
+  justify-content:flex-start;
+}
+.switch{
+  width:30%;
+  height:30px;
+  justify-content:flex-end;
+}
+.special-menus{
+  width:auto;
+  height:100px;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+}
+.menu{
+  width:40%;
+  height:90px;
+}
+.label{
+  width:auto;
+  height:30px;
+  display:flex;
+  justify-content:flex-start;
+}
+.permanent-menus{
+  width:auto;
+  height:auto;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+}
