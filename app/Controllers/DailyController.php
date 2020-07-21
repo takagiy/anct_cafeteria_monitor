@@ -17,6 +17,7 @@ class DailyController extends Controller
     {
         $params = $request->getQueryParams();
         $menus = Menu::all();
+
         return $this->c->get('view')->render($response, 'daily/index.twig', [
             'menus' => $menus,
         ]);
@@ -33,5 +34,22 @@ class DailyController extends Controller
      */
     public function set_stock(Request $request, Response $response, $args)
     {
+    }
+
+    /**
+     * Obtain today's menus from the DB.
+     */
+    private function load_menus(): array
+    {
+        // $today = <TODAY...>;
+      // $today_menus = Menu::where(<QUERY...>);
+      // $permanent_menus = $today_menus->where(<QUERY...>)->all();
+      // $a_set = $today_menus->where(<QUERY...>)->all();
+      // $b_set = $today_menus->where(<QUERY...>)->all();
+      // return [
+      //   'a_set' => $a_set,
+      //   'b_set' => $b_set,
+      //   'permanent' => $parmanent,
+      // ];
     }
 }
