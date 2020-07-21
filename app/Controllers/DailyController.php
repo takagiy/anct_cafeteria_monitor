@@ -16,10 +16,8 @@ class DailyController extends Controller
     public function index(Request $request, Response $response, $args)
     {
         $params = $request->getQueryParams();
-        $menus = Menu::all(); //$this->c->get('db')->table('menus')->get();
-
+        $menus = Menu::all();
         return $this->c->get('view')->render($response, 'daily/index.twig', [
-            'name' => $params['name'] ?? 'World',
             'menus' => $menus,
         ]);
     }
