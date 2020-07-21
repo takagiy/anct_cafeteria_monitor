@@ -472,3 +472,20 @@ composer.lock
 *.css.map
 *.sass.map
 *.scss.map
+
+##### Local files in /home/user
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.config/
+.emacs.el
+.gitconfig
+.local/share/composer/
+.local/share/gvfs-metadata/root
+.local/share/nano/
+.local/share/tracker/
+.profile
+.psql_history
+.viminfo
+.wget-hsts
