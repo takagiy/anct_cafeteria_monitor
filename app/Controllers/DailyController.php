@@ -38,6 +38,10 @@ class DailyController extends Controller
      */
     public function set_stock(Request $request, Response $response, $args)
     {
+    $params = $request->getQueryParams();
+    $menu_id = $params['menu_id'] ?? 'none';
+    $is_sold = $params['is_sold'] ?? 'none';
+
     }
 
     /**
