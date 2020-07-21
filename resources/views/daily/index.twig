@@ -3,9 +3,20 @@
 {% block content %}
 <div>
   <div class="header">明石高専食堂システム</div>
-  <div class="center-label">週刊の献立</div>
-  {% for menu in menus %}
-    {% include 'menu.twig' with { menu: menu } %}
-  {% endfor %}
+  <div class="center-label">今日の献立</div>
+  <div class="label-and-switch">
+    <div class="label">Special Menu</div>
+    <a href="/team5/weekly.php" class="switch"><div>今週の献立</div></a>
+  </div>
+  <div class="special-menus">
+    {% include 'menu.twig' with {menu: menus.a_set} %}
+    {% include 'menu.twig' with {menu: menus.b_set} %}
+  </div>
+  <div class="label">Permanent Menu</div>
+  <div class="permanent-menus">
+    {% for menu in menus.permanent %}
+      {% include 'menu.twig' with { menu: menu } %}
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
