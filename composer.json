@@ -12,7 +12,8 @@
         "vlucas/phpdotenv": "^2.4",
         "slim/psr7": "^0.3.0",
         "php-di/php-di": "^6.0",
-        "illuminate/database": "^7.17"
+        "illuminate/database": "^7.17",
+        "friendsofphp/php-cs-fixer": "^2.16"
     },
     "autoload": {
         "psr-4": {
