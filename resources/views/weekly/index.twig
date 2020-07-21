@@ -1,0 +1,13 @@
+{% extends 'app.twig' %}
+
+{% block content %}
+<div>
+  <div class="header">明石高専食堂システム</div>
+  <div class="center-label">週刊の献立</div>
+  <div >
+  {% for day in days %}
+    {% include 'menu.twig' with { menu: days.set_b } %}
+    {% include 'menu.twig' with { menu: days.set_a } %}
+  {% endfor %}
+</div>
+{% endblock %}
