@@ -42,14 +42,14 @@ class DailyController extends Controller
     private function load_menus(): array
     {
         // $today = <TODAY...>;
-      // $today_menus = Menu::where(<QUERY...>);
-      // $permanent_menus = $today_menus->where(<QUERY...>)->all();
-      // $a_set = $today_menus->where(<QUERY...>)->all();
-      // $b_set = $today_menus->where(<QUERY...>)->all();
-      // return [
-      //   'a_set' => $a_set,
-      //   'b_set' => $b_set,
-      //   'permanent' => $parmanent,
-      // ];
+        // $today_menus = Menu::where(<QUERY...>);
+        // $permanent_menus = $today_menus->where(<QUERY...>)->all();
+        // $a_set = $today_menus->where(<QUERY...>)->all();
+        // $b_set = $today_menus->where(<QUERY...>)->all();
+        // return [
+        //   'a_set' => $a_set,
+        //   'b_set' => $b_set,
+        //   'permanent' => $parmanent,
+        // ];
     }
 }
