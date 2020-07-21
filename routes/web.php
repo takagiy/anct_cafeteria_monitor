@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\DailyController;
+use App\Controllers\WeeklyController;
 
 $app->get('/team5/index.php', DailyController::class.':index');
 $app->get('/team5/weekly.php', WeeklyController::class.':index');

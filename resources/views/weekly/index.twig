@@ -5,9 +5,12 @@
   <div class="header">明石高専食堂システム</div>
   <div class="center-label">週刊の献立</div>
   <div >
-  {% for day in days %}
-    {% include 'menu.twig' with { menu: days.set_b } %}
-    {% include 'menu.twig' with { menu: days.set_a } %}
+  {% for day in menus %}
+    <div class="label">{{ day.day }}</div>
+    <div class="special-menus">
+      {% include 'menu.twig' with { menu: day.set_b } %}
+      {% include 'menu.twig' with { menu: day.set_a } %}
+    </div>
   {% endfor %}
 </div>
 {% endblock %}
