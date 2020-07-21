@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloqient\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model {
 

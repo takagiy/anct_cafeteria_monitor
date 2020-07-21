@@ -16,8 +16,6 @@ try {
     //
 }
 
-$settings = require __DIR__ . '/../config/settings.php';
-
 $container = new DI\Container();
 
 AppFactory::setContainer($container);
@@ -25,7 +23,18 @@ AppFactory::setContainer($container);
 $app = AppFactory::create();
 
 $container->set('settings', function () {
-  return $settings;
+  return [
+    'db' => [
+      'driver' => 'pgsql',
+      'host' => 'localhost',
+      'database' => 'team5db',
+      'username' => 'team5',
+      'password' => '1qazxsw23edc',
+      'charset' => 'utf8',
+      'collation' => 'utf8_unicode_ci',
+      'prefix' => '',
+    ],
+  ];
 });
 
 $container->set('db', function ($container) {
@@ -55,3 +64,6 @@ $container->set('view', function ($container) use ($app) {
 });
 
 require_once __DIR__ . '/../routes/web.php';
+
+$app->addErrorMiddleware(true, true, true);
+
