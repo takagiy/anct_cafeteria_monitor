@@ -85,3 +85,6 @@
 .sold-checking-button:checked ~ * .button {
   display: inline-block;
 }
+.weekly-menus .show{
+  display:none;
+}
