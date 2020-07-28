@@ -57,7 +57,7 @@ class DailyController extends Controller
      */
     private function load_menus(): array
     {
-        $today = '2020-07-07'; //date('Y-m-d');
+        $today = date('Y-m-d');
         $permanent_menus = Menu::where('type', '=', 'PERMANENT_MENU')->get()->toArray();
         $a_set = Menu::where('date', '=', $today)->where('type', '=', 'A_SET')->first();
         $b_set = Menu::where('date', '=', $today)->where('type', '=', 'B_SET')->first();
