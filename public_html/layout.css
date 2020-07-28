@@ -65,7 +65,7 @@
 .button{
   display: none;
   position: relative;
-  display: inline-block;
+  /*display: inline-block;*/
   padding: 0.25em 0.5em;
   text-decoration: none;
   /*color: #FFF;
@@ -83,5 +83,5 @@
   display: none;
 }
 .sold-checking-button:checked ~ * .button {
-  display: inline;
+  display: inline-block;
 }
