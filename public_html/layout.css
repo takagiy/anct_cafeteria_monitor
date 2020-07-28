@@ -24,7 +24,7 @@
 }
 .label-and-switch{
   display:flex;
-  justify-content:space-around;
+  justify-content:space-between;
 }
 .label{
   justify-content:flex-start;

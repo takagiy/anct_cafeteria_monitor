@@ -13,7 +13,8 @@
         "slim/psr7": "^0.3.0",
         "php-di/php-di": "^6.0",
         "illuminate/database": "^7.17",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "nesbot/carbon": "^2.36"
     },
     "autoload": {
         "psr-4": {

@@ -16,7 +16,7 @@ class DailyController extends Controller
     public function index(Request $request, Response $response, $args)
     {
         $params = $request->getQueryParams();
-        $menus = Menu::all();
+        $menus = $this->load_menus();
 
         return $this->c->get('view')->render($response, 'daily/index.twig', [
             'menus' => $menus,
@@ -34,10 +34,22 @@ class DailyController extends Controller
      */
     public function set_stock(Request $request, Response $response, $args)
     {
-    $params = $request->getQueryParams();
-    $menu_id = $params['menu_id'] ?? 'none';
-    $is_sold = $params['is_sold'] ?? 'none';
+        $params = $request->getParsedBody();
+        $menu_id = filter_var($params['menu_id'], FILTER_VALIDATE_INT);
+        $is_sold = filter_var($params['is_sold'], FILTER_VALIDATE_BOOLEAN);
 
+        $this->save_stock($menu_id, $is_sold);
+
+        return $response->withJson([
+            'type' => 'OK',
+        ], 200);
+    }
+
+    private function save_stock(int $id, bool $is_sold): void
+    {
+        $menu = Menu::findOrFail($id);
+        $menu->sold = $is_sold;
+        $menu->save();
     }
 
     /**
@@ -45,15 +57,15 @@ class DailyController extends Controller
      */
     private function load_menus(): array
     {
-        // $today = <TODAY...>;
-        // $today_menus = Menu::where(<QUERY...>);
-        // $permanent_menus = $today_menus->where(<QUERY...>)->all();
-        // $a_set = $today_menus->where(<QUERY...>)->all();
-        // $b_set = $today_menus->where(<QUERY...>)->all();
-        // return [
-        //   'a_set' => $a_set,
-        //   'b_set' => $b_set,
-        //   'permanent' => $parmanent,
-        // ];
+        $today = '2020-07-07'; //date('Y-m-d');
+        $permanent_menus = Menu::where('type', '=', 'PERMANENT_MENU')->get()->toArray();
+        $a_set = Menu::where('date', '=', $today)->where('type', '=', 'A_SET')->first();
+        $b_set = Menu::where('date', '=', $today)->where('type', '=', 'B_SET')->first();
+
+        return [
+            'a_set' => $a_set,
+            'b_set' => $b_set,
+            'permanent' => $permanent_menus,
+        ];
     }
 }

@@ -1,16 +1,23 @@
 <div class="menu">
   <div><img src="{{menu.name}}.jpg"></div>
-<div>
-  <div>{{menu.name}}</div>
-  <div>{{menu.type}}</div>
-  <div>価格:{{menu.value}}</div>
-  <div>アレルギー:{% for a in menu.allergen %}{{ a }},
-{% endfor %}</div>
-  <div
-    {% if menu.sold %}
-    class="sold"
-    {% else %}
-    class="non-sold"
-    {% endif %}
-  >売り切れ</div>
+  <div>
+    <div>{{menu.name}}</div>
+    <div>{{menu.type}}</div>
+    <div>価格:{{menu.value}}</div>
+    <div>
+      アレルギー:
+      {% for a in menu.allergen %}
+        {{ a }},
+      {% endfor %}
+    </div>
+    <div
+      {% if menu.sold %}
+      class="sold"
+      {% else %}
+      class="non-sold"
+      {% endif %}
+    >
+      売り切れ
+    </div>
+  </div>
 </div>
