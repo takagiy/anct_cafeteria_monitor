@@ -17,9 +17,6 @@ class WeeklyController extends Controller
     public function index(Request $request, Response $response, $args)
     {
         $menus = $this->load_menus();
-        echo '<!--';
-        var_dump($menus);
-        echo '-->';
 
         return $this->c->get('view')->render($response, 'weekly/index.twig', [
             'menus' => $menus,
@@ -60,7 +57,7 @@ class WeeklyController extends Controller
         $menus = $this->load_raw_menus();
         $result = [];
         foreach ($menus as $menu) {
-            $day = $menu->date->format('l');
+            $day = date('l', strtotime($menu['date']));
             $result[$day] = $menu;
         }
 
@@ -74,8 +71,6 @@ class WeeklyController extends Controller
     {
         // return all A sets and B sets served within this week.
         // return Menu::where(<...>)->where(<...>)->all();
-        $now = Carbon::now();
-
-        return Menu::whereBetween('date', [$now->startOfWeek(), $now->endOfWeek()])->orderBy('date', 'asc')->get()->toArray();
+        return Menu::whereBetween('date', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->orderBy('date')->get()->toArray();
     }
 }
