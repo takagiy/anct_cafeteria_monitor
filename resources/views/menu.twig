@@ -12,9 +12,18 @@
     </div>
     <div
       {% if menu.sold %}
-      class="sold"
+      class="sold show"
       {% else %}
-      class="non-sold"
+      class="non-sold show"
+      {% endif %}
+    >
+      売り切れ
+    </div>
+    <div
+      {% if menu.sold %}
+      class="sold button"
+      {% else %}
+      class="non-sold button"
       {% endif %}
     >
       売り切れ

@@ -4,13 +4,14 @@
 <div>
   <div class="header">明石高専食堂システム</div>
   <div class="center-label">週刊の献立</div>
-  <div >
-  {% for day in menus %}
-    <div class="label">{{ day.day }}</div>
-    <div class="special-menus">
-      {% include 'menu.twig' with { menu: day.set_b } %}
-      {% include 'menu.twig' with { menu: day.set_a } %}
-    </div>
-  {% endfor %}
+  <div class="menus">
+    {% for day in menus %}
+      <div class="label">{{ day.day }}</div>
+      <div class="special-menus">
+        {% include 'menu.twig' with { menu: day.set_b } %}
+        {% include 'menu.twig' with { menu: day.set_a } %}
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

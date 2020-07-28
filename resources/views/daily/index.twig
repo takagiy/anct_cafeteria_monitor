@@ -2,7 +2,13 @@
 
 {% block content %}
 <div>
-  <div class="header">明石高専食堂システム</div>
+  <div class="header">
+    <div class="header-text">明石高専食堂システム</div>
+  </div>
+  <input type="checkbox" class="sold-checking-button"  id="sold_setting">
+  <label for="sold_setting" class="edit">
+    <img src="/team5/edit.png">
+  </label>
   <div class="center-label">今日の献立</div>
   <div class="label-and-switch">
     <div class="label">Special Menu</div>
@@ -12,7 +18,9 @@
     {% include 'menu.twig' with {menu: menus.a_set} %}
     {% include 'menu.twig' with {menu: menus.b_set} %}
   </div>
-  <div class="label">Permanent Menu</div>
+  <div class="label-and-switch">
+    <div class="label">Permanent Menu</div>
+  </div>
   <div class="permanent-menus">
     {% for menu in menus.permanent %}
       {% include 'menu.twig' with { menu: menu } %}

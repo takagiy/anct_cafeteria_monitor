@@ -79,9 +79,9 @@
   /*押したとき*/
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
-.sold-checking-button:checked + .show{
+.sold-checking-button:checked ~ * .show {
   display: none;
 }
-.sold-checking-button:checked + .button {
+.sold-checking-button:checked ~ * .button {
   display: inline;
 }
