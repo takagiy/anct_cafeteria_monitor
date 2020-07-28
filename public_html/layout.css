@@ -1,25 +1,26 @@
 .header{
-  height:100px;
+  height:50px;
   font-size:30px;
   display:flex;
-  justify-content:center;
+  align-items: center;
 }
 .center-label{
-  height:50px;
+  height:30px;
+  font-size:20px;
   display:flex;
-  justify-content:center;
+  align-items: center;
 }
 .center-label:before,
 .center-label:after {
-border-top: 1px solid;
-content: "";
-flex-grow: 1;
+  border-top: 2px solid;
+  content: "";
+  flex-grow: 1;
 }
 .center-label:before {
-margin-right: 1rem;
+  margin-right: 1rem;
 }
 .center-label:after {
-margin-left: 1rem;
+  margin-left: 1rem;
 }
 .label-and-switch{
   display:flex;
@@ -38,11 +39,6 @@ margin-left: 1rem;
   flex-wrap:wrap;
 }
 .menu{
-}
-.label{
-  display:flex;
-  justify-content:flex-start;
-  border-bottom:solid;
 }
 .permanent-menus{
   display:flex;
