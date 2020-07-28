@@ -3,12 +3,14 @@
   font-size:30px;
   display:flex;
   align-items: center;
-}
-.header-text{
   justify-content:center;
 }
+.header-text{
+}
 .edit{
-  justify-content:flex-end;
+  position:absolute;
+  top:-1px;
+  right:5px;
 }
 .center-label{
   height:30px;
@@ -51,4 +53,23 @@
   display:flex;
   justify-content:space-around;
   flex-wrap:wrap;
+}
+.sold{
+
+}
+.non-sold{
+
+}
+.show{
+
+}
+.button{
+  display: none;
+}
+.sold-checking-button:checked + .show{
+  display: none;
+}
+
+.sold-checking-button:checked + .button {
+  display: inline;
 }
