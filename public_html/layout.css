@@ -55,13 +55,10 @@
   flex-wrap:wrap;
 }
 .sold{
-
 }
 .non-sold{
-
 }
 .show{
-
 }
 .button{
   display: none;
@@ -69,7 +66,6 @@
 .sold-checking-button:checked + .show{
   display: none;
 }
-
 .sold-checking-button:checked + .button {
   display: inline;
 }
