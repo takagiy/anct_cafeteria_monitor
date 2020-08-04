@@ -13,7 +13,7 @@
   right:5px;
 }
 .edit img{
-  width:20px;
+  width:40px;
 }
 .center-label{
   height:30px;
@@ -59,10 +59,10 @@
   font-size:13px;
 }
 .special-menus .menu{
-  width:120px;
+  width:150px;
 }
 .permanent-menus .menu{
-  width:100px;
+  width:120px;
 }
 .sold{
   color:#FFF;
@@ -105,8 +105,8 @@
   display:none;
 }
 .special-menus .menu-image{
-  width:120px;
+  width:150px;
 }
 .permanent-menus .menu-image{
-  width:100px;
+  width:120px;
 }
