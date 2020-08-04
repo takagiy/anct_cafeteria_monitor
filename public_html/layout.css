@@ -71,6 +71,12 @@
   background:#ff9900;
   border-radius: 4px
 }
+.non-sold span{
+  display:none;
+}
+.non-sold:after{
+  content:"販売中";
+}
 .show{
 }
 .button{
