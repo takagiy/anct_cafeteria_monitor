@@ -103,3 +103,9 @@
 .sold-checking-button{
   display:none;
 }
+.special-menus .menu-image{
+  width:120px;
+}
+.permanent-menus .menu-image{
+  width:100px;
+}
