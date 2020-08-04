@@ -55,6 +55,15 @@
   flex-wrap:wrap;
   font-size:13px;
 }
+
+.special-menus .menu{
+  width:100px;
+}
+
+.permanent-menus .menu{
+  width:80px;
+}
+
 .sold{
   color:#FFF;
   background:#1ad8f1;
