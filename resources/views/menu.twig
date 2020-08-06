@@ -20,7 +20,7 @@
     </div>
     <button
       type="button"
-      onClick="postStock('{{menu.id}}', {{ menu.sold ? 'false' : 'true' }});"
+      onClick="postStock('{{menu.id}}');"
       {% if menu.sold %}
         class="sold button"
       {% else %}
