@@ -1,8 +1,7 @@
-<div class="menu">
-  <div><img src="{{menu.name}}.jpg"></div>
+<div class="menu" id="{{menu.id}}">
+  <div><img class="menu-image" src="{{menu.image}}"></div>
   <div>
     <div>{{menu.name}}</div>
-    <div>{{menu.type}}</div>
     <div>価格:{{menu.value}}</div>
     <div>
       アレルギー:
@@ -17,16 +16,18 @@
       class="non-sold show"
       {% endif %}
     >
-      売り切れ
+      <span>売り切れ</span>
     </div>
-    <div
+    <button
+      type="button"
+      onClick="postStock('{{menu.id}}', {{ menu.sold ? 'false' : 'true' }});"
       {% if menu.sold %}
-      class="sold button"
+        class="sold button"
       {% else %}
-      class="non-sold button"
+        class="non-sold button"
       {% endif %}
     >
-      売り切れ
-    </div>
+      <span>売り切れ</span>
+    </button>
   </div>
 </div>
