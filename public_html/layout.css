@@ -65,8 +65,10 @@
   width:120px;
 }
 .sold{
+  color: #ff4000;
 }
 .non-sold{
+  color:#0073ff;
 }
 .non-sold span{
   display:none;
