@@ -2,13 +2,7 @@
   <div><img class="menu-image" src="{{menu.image}}"></div>
   <div>
     <div>{{menu.name}}</div>
-    <div>価格:{{menu.value}}</div>
-    <div>
-      アレルギー:
-      {% for a in menu.allergen %}
-        {{ a }},
-      {% endfor %}
-    </div>
+    <div>価格:¥{{menu.value}}</div>
     <div
       {% if menu.sold %}
       class="sold show"
