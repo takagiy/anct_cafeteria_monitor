@@ -65,14 +65,8 @@
   width:120px;
 }
 .sold{
-  color:#FFF;
-  background:#1ad8f1;
-  border-radius: 4px
 }
 .non-sold{
-  color:#FFF;
-  background:#ff9900;
-  border-radius: 4px
 }
 .non-sold span{
   display:none;
@@ -89,13 +83,20 @@
   outline: none;
   appearance: none;
   border-radius: 4px;
+  color:#FFF;
+}
+.button.sold {
+  background:#1ad8f1;
+}
+.button.non-sold {
+  background:#ff9900;
 }
 .button:active {
 }
-.sold-checking-button:checked ~ * .show {
+.sold-checking-button:checked ~ * .show{
   display: none;
 }
-.sold-checking-button:checked ~ * .button {
+.sold-checking-button:checked ~ * .button{
   display: inline-block;
 }
 .weekly-menus .show{
@@ -109,4 +110,10 @@
 }
 .permanent-menus .menu-image{
   width:120px;
+}
+.special-menus.sold{
+  font-size:20px;
+}
+.special-menus.non-sold{
+  font-size:13px;
 }
