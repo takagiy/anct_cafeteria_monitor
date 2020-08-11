@@ -5,3 +5,7 @@ format:
 dev.serve:
 	pgrep -x php > /dev/null && killall -e php || :
 	php -S localhost:8080 -t public_html public_html/index.php
+
+.PHONY: db.update
+db.update:
+	php Cli/UpdateDB.php
