@@ -17,9 +17,11 @@ class DailyController extends Controller
     {
         $params = $request->getQueryParams();
         $menus = $this->load_menus();
+        $csrf = $this->get_csrf_tokens($request);
 
         return $this->c->get('view')->render($response, 'daily/index.twig', [
             'menus' => $menus,
+            'csrf' => $csrf,
         ]);
     }
 
@@ -70,6 +72,20 @@ class DailyController extends Controller
             'a_set' => $a_set,
             'b_set' => $b_set,
             'permanent' => $permanent_menus,
+        ];
+    }
+
+    private function get_csrf_tokens(Request $request): array
+    {
+        $csrf = $this->c->get('csrf');
+        $nameKey = $csrf->getTokenNameKey();
+        $valueKey = $csrf->getTokenValueKey();
+
+        return [
+            'nameKey' => $nameKey,
+            'valueKey' => $valueKey,
+            'name' => $request->getAttribute($nameKey),
+            'value' => $request->getAttribute($valueKey),
         ];
     }
 }

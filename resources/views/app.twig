@@ -2,12 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="cache-control" content="no-cache">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>明石高専食堂</title>
         <link rel="stylesheet" href="layout.css">
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js"></script>
+        {% include 'tokens.twig' with {csrf: csrf} %}
         <script src="/team5/js/post-stock.js"></script>
         {% block content %}{% endblock %}
     </body>
