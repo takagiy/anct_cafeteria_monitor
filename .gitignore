@@ -491,3 +491,5 @@ composer.lock
 .wget-hsts
 .php_cs.cache
 .ssh
+
+public_html/images/

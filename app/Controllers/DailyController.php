@@ -35,14 +35,18 @@ class DailyController extends Controller
     public function set_stock(Request $request, Response $response, $args)
     {
         $params = $request->getParsedBody();
-        $menu_id = filter_var($params['menu_id'], FILTER_VALIDATE_INT);
+        //$menu_id = filter_var($params['menu_id'], FILTER_VALIDATE_INT);
+        $menu_id = intval($params['menu_id']);
         $is_sold = filter_var($params['is_sold'], FILTER_VALIDATE_BOOLEAN);
 
         $this->save_stock($menu_id, $is_sold);
 
-        return $response->withJson([
-            'type' => 'OK',
-        ], 200);
+        $response->getBody()->write(json_encode([
+            'result' => 'OK',
+            'is_sold' => $is_sold,
+        ]));
+
+        return $response->withHeader('Content-Type', 'application/json');
     }
 
     private function save_stock(int $id, bool $is_sold): void
@@ -58,7 +62,7 @@ class DailyController extends Controller
     private function load_menus(): array
     {
         $today = date('Y-m-d');
-        $permanent_menus = Menu::where('type', '=', 'PERMANENT_MENU')->get()->toArray();
+        $permanent_menus = Menu::where('date', '=', $today)->where('type', '=', 'PERMANENT_MENU')->get()->toArray();
         $a_set = Menu::where('date', '=', $today)->where('type', '=', 'A_SET')->first();
         $b_set = Menu::where('date', '=', $today)->where('type', '=', 'B_SET')->first();
 

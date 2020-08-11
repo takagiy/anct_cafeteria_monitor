@@ -58,7 +58,12 @@ class WeeklyController extends Controller
         $result = [];
         foreach ($menus as $menu) {
             $day = date('l', strtotime($menu['date']));
-            $result[$day] = $menu;
+            $type = strtolower($menu['type']);
+
+            if (!isset($result[$day])) {
+                $result[$day] = [];
+            }
+            $result[$day][$type] = $menu;
         }
 
         return $result;
