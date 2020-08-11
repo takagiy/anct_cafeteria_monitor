@@ -20,7 +20,10 @@ const postStock = (id) => {
   const params = new URLSearchParams();
   params.append('menu_id', id);
   params.append('is_sold', !isSold(id));
-  axios.post('/team5/api/daily/set-stock.php', params)
+  params.append(window.csrfNameKey, window.csrfName);
+  params.append(window.csrfValueKey, window.csrfValue);
+
+  axios.post('/team5/api/daily/set-stock.php', params.toString())
     .then(response => {
       console.log(response);
       setState(id, response.data.is_sold);

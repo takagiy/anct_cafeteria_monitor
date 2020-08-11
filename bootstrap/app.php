@@ -10,6 +10,8 @@ use Slim\Views\TwigExtension;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+session_start();
+
 try {
     (new Dotenv(__DIR__.'/../'))->load();
 } catch (InvalidPathException $e) {
@@ -20,6 +22,13 @@ $container = new DI\Container();
 AppFactory::setContainer($container);
 
 $app = AppFactory::create();
+$responseFactory = $app->getResponseFactory();
+
+$container->set('csrf', function () use ($responseFactory) {
+    return new Slim\Csrf\Guard($responseFactory);
+});
+
+$app->add('csrf');
 
 $container->set('settings', function () {
     return [
