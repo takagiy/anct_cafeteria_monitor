@@ -1,6 +1,8 @@
 <?php
 
-use App\Model\Menu;
+namespace Cli\Helpers;
+
+use App\Models\Menu;
 use Carbon\Carbon;
 
 class DBManager {
@@ -16,6 +18,6 @@ class DBManager {
   }
 
   public function resetStocks() {
-    Menu::all()->update(['sold' => false]);
+    Menu::query()->update(['sold' => false]);
   }  
 }
