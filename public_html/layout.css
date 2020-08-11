@@ -51,6 +51,7 @@
 }
 .menu{
   text-align:center;
+  padding: 5px;
 }
 .permanent-menus{
   display:flex;
@@ -63,6 +64,9 @@
 }
 .permanent-menus .menu{
   width:120px;
+}
+.sold,.non-sold {
+  font-weight: bold;
 }
 .sold{
   color: #ff4000;
@@ -79,13 +83,16 @@
 .show{
 }
 .button{
+  padding: 4px 8px;
+  font-size: 1em;
   display:none;
   border: none;
   cursor: pointer;
   outline: none;
   appearance: none;
-  border-radius: 4px;
+  border-radius: 5px;
   color:#FFF;
+  box-shadow: 0px 1px 2px 0px grey;
 }
 .button.sold {
   background:#1ad8f1;
@@ -107,6 +114,11 @@
 .sold-checking-button{
   display:none;
 }
+
+.menu-image {
+  border-radius: 5px
+}
+
 .special-menus .menu-image{
   width:150px;
 }
