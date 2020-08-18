@@ -14,7 +14,7 @@ class DBManager
 
         $menus = Menu::all();
         foreach ($menus as $menu) {
-            $menu->date = Carbon::parse($menu->date)->addDays($delta)->format('y-m-d');
+            $menu->date = Carbon::parse($menu->date)->subDays($delta)->format('y-m-d');
             $menu->save();
         }
     }
